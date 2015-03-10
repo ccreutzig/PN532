@@ -340,6 +340,7 @@ bool PN532::readPassiveTargetID(uint8_t cardbaudrate, uint8_t *uid, uint8_t *uid
 }
 
 
+#ifdef PN532_SUPPORT_MIFARE_CLASSIC
 /***** Mifare Classic Functions ******/
 
 /**************************************************************************/
@@ -607,6 +608,7 @@ uint8_t PN532::mifareclassic_WriteNDEFURI (uint8_t sectorNumber, uint8_t uriIden
     // Seems that everything was OK (?!)
     return 1;
 }
+#endif
 
 /***** Mifare Ultralight Functions ******/
 
