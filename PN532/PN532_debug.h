@@ -13,8 +13,8 @@
 #else
 #define DMSG(args...)
 #define DMSG_STR(str)
-#define DMSG_HEX(num)
-#define DMSG_INT(num)
+#define DMSG_HEX(num) (void)(num)
+#define DMSG_INT(num) (void)(num)
 #endif
 
 #endif
