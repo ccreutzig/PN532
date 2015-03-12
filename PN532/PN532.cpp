@@ -13,6 +13,16 @@
 
 #define HAL(func)   (_interface->func)
 
+#ifndef PN532_SERIAL_OUTPUT_ON_ERROR
+// disable Serial output
+#define Serial WorkAroundDumbArduino
+static class {
+public:
+    void print(...) {}
+    void println(...) {}
+} Serial;
+#endif
+
 PN532::PN532(PN532Interface &interface)
 {
     _interface = &interface;
